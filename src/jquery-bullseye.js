@@ -6,8 +6,9 @@
   };
   var $window = $(window);
   var setupImageContainer = function($element, settings) {
-    var _imageSrc,
-        image = document.createElement('img');
+    var image = document.createElement('img'),
+        _imageSrc;
+    
     if($element.data('bullseyeImage')) {
       $element.html('<img src="' + $element.data('bullseyeImage') + '">');
       _imageSrc = $element.data('bullseyeImage');
@@ -15,20 +16,18 @@
       _imageSrc = $element.find('img').first().attr('src');
       $element.data('bullseyeImage', _imageSrc);
     }
-    settings.fadeEffect ? $element.find('img').first().css({'opacity': 0}) : null;
+
+    if(settings.fadeEffect) {
+      $element.find('img').first().css({'opacity': 0});
+    }
 
     image.src = _imageSrc;
     image.onload = function() {
-      adjustImage($element, settings);
+      setImageStyle($element, settings);
     };
   };
-  var adjustImage = function($element, settings) {
+  var setImageStyle = function($element, settings) {
     var $image = $element.find('img').first(),
-        _scale,
-        _imageW,
-        _imageH,
-        _elementW = $element.innerWidth(),
-        _elementH = $element.innerHeight(),
         _elementStyle = {
           'position': 'relative',
           'overflow': 'hidden'
@@ -62,10 +61,25 @@
 
     $element.css(_elementStyle);
     $image.css(_imageStyle);
-    _imageW = $image.width();
+
+    adjustImage($element);
+
+    if(settings.fadeEffect) {
+      $image.css(_fadeCss.start).on('transitionend', function() {
+        $(this).css(_fadeCss.end);
+      });
+    }
+  };
+  var adjustImage = function($element) {
+    var $image = $element.find('img').first(),
+        _elementH = $element.innerHeight(),
+        _imageH,
+        _scale;
+
     _imageH = $image.height();
+
     if(_imageH < _elementH) {
-      _scale = _elementH / _imageH
+      _scale = _elementH / _imageH;
       $image.css({
         '-webkit-transform': 'scale(' + _scale + ')',
         '-moz-transform': 'scale(' + _scale + ')',
@@ -80,16 +94,11 @@
         'transform': ''
       });
     }
-    if(settings.fadeEffect) {
-      $image.css(_fadeCss.start).on('transitionend', function() {
-        $(this).css(_fadeCss.end);
-      });
-    };
   };
   var bullseye = function($element, settings) {
     setupImageContainer($element, settings);
-    $window.on('resize', function(event) {
-      adjustImage($element, settings);
+    $window.on('resize', function() {
+      adjustImage($element);
     });
   };
   $.fn.bullseye = function(options) {
