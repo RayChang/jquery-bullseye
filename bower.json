@@ -1,0 +1,26 @@
+{
+  "name": "jquery-bullseye",
+  "version": "1.0.0",
+  "license": "MIT",
+  "description": "Make your picture in the area center and covers the area",
+  "authors": [
+    "Ray Chang"
+  ],
+  "homepage": "https://github.com/RayChang/jquery-bullseye",
+  "main": "src/jquery-bullseye.js",
+  "dependencies": {
+    "jquery": ">= 1.8.2"
+  },
+  "keywords": [
+    "image",
+    "covers",
+    "centered",
+    "responsive"
+  ],
+  "ignore": [
+    "**/*.txt",
+    "**/*.html",
+    "README.md",
+    "assets"
+  ]
+}
