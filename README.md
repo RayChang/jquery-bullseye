@@ -1,6 +1,6 @@
 ![bullseye icon](assets/images/bullseye.png)
 # jquery-bullseye
-make your picture be centered and covers the area
+Making your picture absolute center, also scaling and cropping perfectly.
 
 ##How to Install
 1. This github repository, using `git clone https://github.com/RayChang/jquery-bullseye.git`
