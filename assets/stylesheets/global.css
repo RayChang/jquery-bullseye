@@ -1,0 +1,26 @@
+*,
+*:after,
+*:before {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.warp {
+  width: 80%;
+  margin: 10px auto; }
+  .warp:after {
+    content: '';
+    display: table;
+    clear: both; }
+
+.element {
+  padding: 10px;
+  float: left; }
+  .element.level {
+    width: 33.33333333%;
+    height: 200px; }
+  .element.vertical {
+    width: 33.33333333%;
+    height: 450px; }
+  .element.square {
+    width: 33.33333333%;
+    height: 380px; }
