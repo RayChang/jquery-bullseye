@@ -20,7 +20,6 @@
   "ignore": [
     "**/*.txt",
     "**/*.html",
-    "README.md",
     "assets"
   ]
 }
