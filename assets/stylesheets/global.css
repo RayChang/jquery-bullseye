@@ -1,26 +1,126 @@
-*,
-*:after,
-*:before {
+@import url(http://fonts.googleapis.com/css?family=Lobster|Open+Sans|Questrial);
+* {
+  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
+  *:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; }
 
-.warp {
-  width: 80%;
-  margin: 10px auto; }
-  .warp:after {
+html,
+body {
+  font-size: 14px;
+  font-family: "Open Sans"; }
+
+.button {
+  display: inline-block;
+  height: 40px;
+  margin-top: 2em;
+  padding: 0 15px;
+  line-height: 40px;
+  color: #FFFFFF;
+  text-decoration: none;
+  border: none;
+  border-radius: 4px;
+  background-color: #CE2732; }
+  .button:after {
     content: '';
     display: table;
+    width: 0;
+    height: 0;
     clear: both; }
+  .button + .button {
+    margin-left: 1em; }
+  .button:hover {
+    background-color: #a31f28; }
 
-.element {
-  padding: 10px;
-  float: left; }
-  .element.level {
-    width: 33.33333333%;
-    height: 200px; }
-  .element.vertical {
-    width: 33.33333333%;
-    height: 450px; }
-  .element.square {
-    width: 33.33333333%;
-    height: 380px; }
+header {
+  width: 100%;
+  padding: 4.64em 0;
+  background-color: #FF2E3C; }
+  header .title {
+    font-family: "Lobster";
+    color: #FFFFFF; }
+  header .text {
+    color: #FFFFFF; }
+  header img {
+    width: auto !important; }
+
+section {
+  padding: 4.64em 0; }
+  section .title {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #d0d0d0; }
+  section:nth-child(even) {
+    background-color: #F1F3F3; }
+
+pre {
+  white-space: pre-wrap;
+  /* css-3 */
+  white-space: -moz-pre-wrap;
+  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;
+  /* Opera 4-6 */
+  white-space: -o-pre-wrap;
+  /* Opera 7 */
+  word-wrap: break-word;
+  /* Internet Explorer 5.5+ */ }
+  pre.install {
+    padding: 0.5em 1em;
+    border-radius: 3px;
+    color: #FFFFFF;
+    background-color: #6A6A6A; }
+
+.inner {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1em; }
+  .inner:after {
+    content: '';
+    display: table;
+    width: 0;
+    height: 0;
+    clear: both; }
+  .inner .image-l,
+  .inner .image-r {
+    width: 30%;
+    float: left;
+    text-align: center; }
+    .inner .image-l img,
+    .inner .image-r img {
+      width: 100%; }
+  .inner .image-r {
+    float: right; }
+  .inner .hljs {
+    padding: 1em;
+    border-radius: 5px;
+    background-color: #e3e7e7; }
+
+.title {
+  margin: 0;
+  color: #363636;
+  font-family: "Questrial";
+  font-size: 3.43em; }
+
+.text-r {
+  margin-left: 35%; }
+
+.text-l {
+  margin-right: 35%; }
+  .text-l .title {
+    text-align: right; }
+
+.icon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin: 0.8em 0.5em 0 0;
+  float: left;
+  background-image: url("/assets/images/icon.svg");
+  background-repeat: no-repeat; }
+  .icon.icon-download {
+    background-position: 0 0; }
+  .icon.icon-github {
+    background-position: -16px 0; }

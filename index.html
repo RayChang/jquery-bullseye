@@ -3,13 +3,88 @@
 <head>
   <meta charset="UTF-8">
   <title>jQuery Bullseye</title>
-  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/styles/github.min.css">
   <link rel="stylesheet" href="assets/stylesheets/global.css">
   <script type="text/javascript" src="//code.jquery.com/jquery-1.8.2.min.js" charset="utf-8"></script>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/highlight.min.js" charset="utf-8"></script>
   <script type="text/javascript" src="src/jquery-bullseye.js" charset="utf-8"></script>
 </head>
 <body>
-  <div class="warp">
+  <header>
+    <div class="inner">
+      <div class="image-l">
+        <img src="assets/images/logo.svg" alt="">
+      </div>
+      <div class="text-r">
+        <h1 class="title">Bullseye</h1>
+        <p class="text">Making your picture absolute center, also scaling and cropping perfectly.</p>
+        <a class="button" href="https://github.com/RayChang/jquery-bullseye/archive/master.zip"><i class="icon icon-download"></i>DOWNLOAD</a>
+        <a class="button" href="https://github.com/RayChang/jquery-bullseye" target="_blank"><i class="icon icon-github"></i>FORK ON GITHUB</a>
+      </div>
+    </div>
+  </header>
+  <div>
+    <section>
+      <div class="inner">
+        <div class="image-r">
+          <img src="assets/images/install.svg" alt="">
+        </div>
+        <div class="text-l">
+          <h1 class="title">How to install</h1>
+          <ol>
+            <li>
+              This github repository, using<pre><code>git clone https://github.com/RayChang/jquery-bullseye.git</code></pre>
+            </li>
+            <li>
+              Using bower<pre><code>bower install jquery-bullseye --save</code></pre>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="inner">
+        <div class="image-l">
+          <img src="assets/images/use.svg" alt="">
+        </div>
+        <div class="text-r">
+          <h1 class="title">How to use</h1>
+          <p>
+            <strong>HTML</strong>
+            <pre><code class="html">&lt;div class="element"&gt;
+    &lt;img src="yourImage.jpg"&gt;
+  &lt;/div&gt;<code></pre>
+            or
+            <pre><code>&lt;div class="element" data-bullseye-image="yourImage.jpg"&gt;&lt;/div&gt;</code></pre>
+          </p>
+          <br>
+          <p>
+            <strong>Javascript</strong>
+            <pre><code>$('.element').bullseye();</code></pre>
+          </p>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="inner">
+        <div class="image-r">
+          <img src="assets/images/option.svg" alt="">
+        </div>
+        <div class="text-l">
+          <h1 class="title">Default Options</h1>
+          <p>
+            <strong>the default options is as follows:</strong>
+            <pre><code class="javascript">$('.element').bullseye({
+  fadeEffect: true,  //Pictures show the effect of using fade in.<br>
+  effectTime: 0.5  //The time required.,   
+});</code></pre>
+          </p>
+        </div>
+      </div>
+    </section>
+  <div>
+  <!-- <div class="warp">
     <div class="element level">
       <img src="assets/images/Edge of Tomorrow Level.jpg" alt="">
     </div>
@@ -25,13 +100,16 @@
     <div class="element square" data-bullseye-image="assets/images/Edge of Tomorrow Level.jpg"></div>
     <div class="element square" data-bullseye-image="assets/images/Edge of Tomorrow Vertical.jpg"></div>
     <div class="element square" data-bullseye-image="assets/images/Edge of Tomorrow Square.jpg"></div>
-  </div>
+  </div> -->
 </body>
 <script>
   $(document).ready(function($) {
-    $('.element').bullseye({
-      fadeEffect: true,
-      effectTime: .8
+    // $('.element').bullseye({
+    //   fadeEffect: true,
+    //   effectTime: .8
+    // });
+    $('pre code').each(function(i, block) {
+      hljs.highlightBlock(block);
     });
   });
 </script>
