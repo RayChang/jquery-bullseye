@@ -29,10 +29,6 @@
   <div>
     <section>
       <div class="inner">
-      </div>
-    </section>
-    <section>
-      <div class="inner">
         <div class="image-r">
           <img src="assets/images/install.svg" alt="">
         </div>
@@ -47,6 +43,19 @@
             </li>
           </ol>
         </div>
+      </div>
+    </section>
+    <section>
+      <div class="inner example">
+        <h1 class="title">Example</h1>
+        <div class="element A1">
+          <img src="assets/images/Edge of Tomorrow Level.jpg">
+        </div>
+        <div class="btn A1">Try me</div>
+        <div class="element A2">
+          <img src="assets/images/Edge of Tomorrow Vertical.jpg">
+        </div>
+        <div class="btn A2">Try me</div>
       </div>
     </section>
     <section>
@@ -90,30 +99,21 @@
       </div>
     </section>
   </div>
-  <!-- <div class="warp">
-    <div class="element level">
-      <img src="assets/images/Edge of Tomorrow Level.jpg" alt="">
-    </div>
-    <div class="element level">
-      <img src="assets/images/Edge of Tomorrow Vertical.jpg" alt="">
-    </div>
-    <div class="element level">
-      <img src="assets/images/Edge of Tomorrow Square.jpg" alt="">
-    </div>
-    <div class="element vertical" data-bullseye-image="assets/images/Edge of Tomorrow Level.jpg"></div>
-    <div class="element vertical" data-bullseye-image="assets/images/Edge of Tomorrow Vertical.jpg"></div>
-    <div class="element vertical" data-bullseye-image="assets/images/Edge of Tomorrow Square.jpg"></div>
-    <div class="element square" data-bullseye-image="assets/images/Edge of Tomorrow Level.jpg"></div>
-    <div class="element square" data-bullseye-image="assets/images/Edge of Tomorrow Vertical.jpg"></div>
-    <div class="element square" data-bullseye-image="assets/images/Edge of Tomorrow Square.jpg"></div>
-  </div> -->
 </body>
 <script>
   $(document).ready(function($) {
-    // $('.element').bullseye({
-    //   fadeEffect: true,
-    //   effectTime: .8
-    // });
+    $('.btn.A1').one('click', function() {
+      $('.element.A1').bullseye({
+        fadeEffect: true,
+        effectTime: .8
+      });
+    });
+    $('.btn.A2').one('click', function() {
+      $('.element.A2').bullseye({
+        fadeEffect: true,
+        effectTime: .8
+      });
+    });
     $('pre code').each(function(i, block) {
       hljs.highlightBlock(block);
     });
