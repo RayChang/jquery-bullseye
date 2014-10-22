@@ -72,22 +72,28 @@
   };
   var adjustImage = function($element) {
     var $image = $element.find('img').first(),
+        _userAgent = window.navigator.userAgent,
         _elementH = $element.innerHeight(),
         _imageH,
-        _scale;
+        _scale,
+        regex = new RegExp(/Firefox/i),
+        _res = regex.test(_userAgent);
 
     _imageH = $image.height();
 
     if(_imageH < _elementH) {
       _scale = _elementH / _imageH;
       $image.css({
+        'top': _res ? 0 : null,
         '-webkit-transform': 'scale(' + _scale + ')',
         '-moz-transform': 'scale(' + _scale + ')',
         '-o-transform': 'scale(' + _scale + ')',
-        'transform': 'scale(' + _scale + ')'
+        'transform': 'scale(' + _scale + ')',
+
       });
     } else {
       $image.css({
+        'top': _res ? ((_imageH - _elementH) / -2) : null,
         '-webkit-transform': '',
         '-moz-transform': '',
         '-o-transform': '',
