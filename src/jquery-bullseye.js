@@ -109,9 +109,8 @@
   };
   $.fn.bullseye = function(options) {
     var settings = $.extend({}, defaults, options);
-    return this.each(function() {
-      var $element = $(this);
-      bullseye($element, settings);
+    return this.each(function(index, element) {
+      bullseye($(element), settings);
     });
   };
 }(window.jQuery);
