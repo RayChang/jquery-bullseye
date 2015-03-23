@@ -10,7 +10,13 @@
         _imageSrc;
     
     if($element.data('bullseyeImage')) {
-      $element.html('<img src="' + $element.data('bullseyeImage') + '">');
+      var $imgHtml = $('<img src="' + $element.data('bullseyeImage') + '">');
+      $element.children('img').each(function(index, el) {
+        if($(el).attr('src') === $element.data('bullseyeImage')) {
+          $(el).remove();
+          $element.append($imgHtml);
+        }
+      });
       _imageSrc = $element.data('bullseyeImage');
     } else {
       _imageSrc = $element.find('img').first().attr('src');
